@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Basic validation
     if (empty($full_name) || empty($gender_sex) || empty($age) || empty($address)) {
-        redirect('criminal_cases.php'); // Redirect if missing required fields
+        redirect('criminal_cases.php');
     }
 
     // Insert into persons table
@@ -25,5 +25,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute();
     $stmt->close();
 
-    redirect('criminal_cases.php'); // Back to cases page
+    redirect('criminal_cases.php');
 }

@@ -3,7 +3,7 @@ require_once '../config.php';
 checkAdminAuth();
 
 
-// ================= FILTER LOGIC =================
+// FILTER LOGIC
 $filter = isset($_GET['filter']) ? $_GET['filter'] : '';
 $where = "";
 
@@ -53,7 +53,7 @@ ORDER BY cc.id DESC
 ";
 $result = $conn->query($sql);
 
-// ================= COUNT QUERIES =================
+// COUNT QUERIES
 $totalUrban = $conn->query("
     SELECT COUNT(*) as total 
     FROM criminal_cases 
@@ -80,7 +80,7 @@ $totalFemale = $conn->query("
     WHERE p.gender_sex = 'Female'
 ")->fetch_assoc()['total'];
 
-// ================= ACTIVE FILTER COUNT =================
+// ACTIVE FILTER COUNT
 $activeCount = $result->num_rows;
 
 $filterLabel = "All Cases";
@@ -236,7 +236,7 @@ body {
             </ul>
         </div>
 
-        <!-- COUNT DISPLAY (RIGHT SIDE OF FILTER BUTTON) -->
+        <!-- COUNT DISPLAY -->
         <div>
             <span class="fw-semibold text-muted">
                 Total: 

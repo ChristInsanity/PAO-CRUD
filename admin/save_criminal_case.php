@@ -23,12 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $place_of_detention  = sanitize($_POST['place_of_detention']);
     $case_received       = sanitize($_POST['case_received']);
 
-    // Basic validation
+    // validation
     if (empty($person_id) || empty($control_number) || empty($title_of_the_case) || empty($status_of_case)) {
         redirect('criminal_cases.php');
     }
 
-    // Insert into criminal_cases table
     $stmt = $conn->prepare("
         INSERT INTO criminal_cases (
             person_id,

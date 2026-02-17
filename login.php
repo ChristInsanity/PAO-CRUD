@@ -1,8 +1,6 @@
 <?php
-require_once '<PAO-CRUD>
-<Pao>config.php';
+require_once 'config.php';
 
-// Redirect if already logged in
 if (isLoggedIn()) {
     if (isAdmin()) {
         redirect('admin/dashboard.php');
@@ -168,7 +166,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </div>
 
-<!-- Role Not Assigned Modal -->
 <div class="modal fade" id="roleWarningModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
